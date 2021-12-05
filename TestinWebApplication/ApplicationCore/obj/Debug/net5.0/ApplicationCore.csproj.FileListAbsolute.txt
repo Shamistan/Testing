@@ -9,3 +9,4 @@ C:\Users\Asus\source\repos\Testing\TestinWebApplication\ApplicationCore\obj\Debu
 C:\Users\Asus\source\repos\Testing\TestinWebApplication\ApplicationCore\obj\Debug\net5.0\ApplicationCore.dll
 C:\Users\Asus\source\repos\Testing\TestinWebApplication\ApplicationCore\obj\Debug\net5.0\ref\ApplicationCore.dll
 C:\Users\Asus\source\repos\Testing\TestinWebApplication\ApplicationCore\obj\Debug\net5.0\ApplicationCore.pdb
+C:\Users\Asus\source\repos\Testing\TestinWebApplication\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <History>True|2021-12-05T22:27:56.5744852Z;True|2021-12-06T02:21:46.7098341+04:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="TestDbContextConnectionString">
+      <Value>Data Source=SQL5105.site4now.net%3bInitial Catalog=db_a7bfd6_testdb%3bUser Id=db_a7bfd6_testdb_admin%3bPassword=shemi%401997%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Infrastructure.DbContextModels.TestDbContext">
+      <Value>Data Source=SQL5105.site4now.net%3bInitial Catalog=db_a7bfd6_testdb%3bUser Id=db_a7bfd6_testdb_admin%3bPassword=shemi%401997%3bMultipleActiveResultSets=true</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
