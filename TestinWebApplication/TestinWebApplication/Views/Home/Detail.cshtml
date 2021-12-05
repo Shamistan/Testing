@@ -1,0 +1,40 @@
+﻿@{
+    var subTransactionModel = (List<SubTransactionEntity>)ViewBag.SubTransactionModel;
+}
+<div class="row">
+    <div class="col-md-12">
+        @if (subTransactionModel != null && subTransactionModel.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">FinancialInstitution</th>
+                        <th scope="col">FXSettlementDate</th>
+                        <th scope="col">ReconciliationFileID</th>
+                        <th scope="col">TransactionCurrency</th>
+                        <th scope="col">ReconciliationCurrency</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in subTransactionModel)
+                    {
+                        <tr>
+                            <td>@item.SettlementCategory</td>
+                            <td>@item.TransactionAmountcredit</td>
+                            <td>@item.ReconciliationAmntCredit</td>
+                            <td>@item.FeeAmountCredit</td>
+                            <td>@item.TransactionAmountDebit</td>
+                            <td>@item.ReconciliationAmntDebit</td>
+                            <td>@item.FeeAmountDebit</td>
+                            <td>@item.CountTotal</td>
+                            <td>@item.NetValue</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+    </div>
+    <a href="/Home/UploadFile" class="btn btn-dark">Back</a>
+</div>

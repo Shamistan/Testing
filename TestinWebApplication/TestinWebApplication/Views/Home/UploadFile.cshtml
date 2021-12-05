@@ -1,0 +1,67 @@
+﻿@model FileInputModel
+@{
+    var transformerTransaktionViewModel = (List<TransactionEntity>)ViewBag.TransformerTransactionViewModel;
+    var fileNames = ViewBag.FileName;
+}
+<div class="row">
+    <div class="col-md-4 mr-2">
+        @if (ViewBag.FileName != null && ViewBag.FileName != "")
+        {
+            <form style="margin:4px 0px" asp-controller="Home"
+                  asp-action="DisplayFile" method="post" enctype="multipart/form-data" class="form">
+
+                <div class="form-group">
+
+                    <input type="hidden" value="@fileNames" name="fileName" />
+                </div>
+                <button class="btn btn-info">Show Table</button>
+            </form>
+            @*<input type="hidden" value="ViewBag.FileName" />*@
+            @*<a class="btn btn-info" href="@Url.Action("DisplayFile", "Home",new {fileName=fileNames })"></a>*@
+
+        }
+        <form style="margin:4px 0px" asp-controller="Home"
+              asp-action="UploadFile" method="post" enctype="multipart/form-data" class="form">
+
+            <div class="form-group">
+                <label style="display:block" asp-for="File">File</label>
+                <input asp-for="File" />
+            </div>
+            <button class="btn btn-success">Send File</button>
+        </form>
+
+    </div>
+    <div class="col-md-12">
+        @if (transformerTransaktionViewModel != null && transformerTransaktionViewModel.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Detail</th>
+                        <th scope="col">FinancialInstitution</th>
+                        <th scope="col">FXSettlementDate</th>
+                        <th scope="col">ReconciliationFileID</th>
+                        <th scope="col">TransactionCurrency</th>
+                        <th scope="col">ReconciliationCurrency</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in transformerTransaktionViewModel)
+                    {
+                    <tr>
+                        <td><a href="/Home/Detail/@item.Id"><i class="fas fa-info-circle"></i></a></td>
+                        <td>@item.FinancialInstitution</td>
+                        <td>@item.FXSettlementDate</td>
+                        <td>@item.ReconciliationFileID</td>
+                        <td>@item.TransactionCurrency</td>
+                        <td>@item.ReconciliationCurrency</td>
+
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
